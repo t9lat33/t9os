@@ -1655,63 +1655,7 @@ openZone = function(f){
     }).catch(e=>alert("Failed to load zone: "+e));
 };
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // ================= CONFIG =================
-  const NO_AD_IDS = ["6528690208","4084803237","0635354315"]; // IDs that never see ads
-  const ID_KEY = "numericUserID";
-  const VIGNETTE_DELAY = 55 * 1000; // 20 seconds
-  // ==========================================
 
-  // Generate numeric ID (~10 digits)
-  function generateNumericID() {
-      const timestamp = Date.now().toString().slice(-6);
-      const random = Math.floor(Math.random() * 10000).toString().padStart(4,'0');
-      return random + timestamp;
-  }
-
-  // Get or create user ID
-  let myID = localStorage.getItem(ID_KEY);
-  if (!myID) {
-      myID = generateNumericID();
-      localStorage.setItem(ID_KEY, myID);
-  }
-
-  // Throttle vignette injection
-  let lastVignetteTime = 0;
-
-  function injectVignette() {
-      const now = Date.now();
-
-      // Check if user is exempt
-      if (NO_AD_IDS.includes(myID)) {
-          console.log("No vignette ads for this user:", myID);
-          return;
-      }
-
-      // Throttle vignette
-      if (now - lastVignetteTime < VIGNETTE_DELAY) {
-          console.log("Vignette blocked: waiting", VIGNETTE_DELAY/1000, "seconds");
-          return;
-      }
-
-      lastVignetteTime = now;
-
-      // Inject actual vignette script
-      const s = document.createElement('script');
-      s.dataset.zone = '10608168';
-      s.src = 'https://gizokraijaw.net/vignette.min.js';
-      document.body.appendChild(s);
-
-      console.log("Vignette injected for user:", myID);
-  }
-
-  // Trigger on clicks safely
-  document.body.addEventListener('click', function(e){
-      injectVignette();
-  });
-});
-</script>
 
 
 
