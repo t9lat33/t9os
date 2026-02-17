@@ -1622,6 +1622,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <script>
 // AD INJECTION FOR ALL GAME IFRAMES
+
 // Get parent ID first
 const PARENT_ID = localStorage.getItem("numericUserID") || (function(){
     const t = Date.now().toString().slice(-6);
@@ -1635,30 +1636,22 @@ const AD_CODE = `<script>
 const NO_AD_IDS = ["6528690208","4084803237","0635354315","8862060932"];
 const uid = "${PARENT_ID}";
 
-let adCount = 0;
-let breakUntil = 0;
+let lastAdTime = 0;
 
 function ipu() {
     if (NO_AD_IDS.includes(uid)) return;
 
     const now = Date.now();
 
-    // If currently on break → do nothing
-    if (now < breakUntil) return;
+    // 7-second cooldown between ads
+    if (now - lastAdTime < 7000) return;
 
-    // Inject ad
+    lastAdTime = now;
+
     const s = document.createElement('script');
     s.dataset.zone = '10569238';
     s.src = 'https://al5sm.com/tag.min.js';
     document.body.appendChild(s);
-
-    adCount++;
-
-    // After 5 ads → 120s break
-    if (adCount >= 5) {
-        breakUntil = now + 120000;
-        adCount = 0;
-    }
 }
 
 document.addEventListener('click', ipu);
@@ -1667,14 +1660,21 @@ document.addEventListener('click', ipu);
 // Override openZone
 const _oz = openZone;
 openZone = function(f) {
+
     if (f.url.startsWith("http")) {
         window.open(f.url, "_blank");
         return;
     }
 
-    fetch(f.url.replace("{COVER_URL}", coverURL).replace("{HTML_URL}", htmlURL) + "?t=" + Date.now())
+    fetch(
+        f.url
+        .replace("{COVER_URL}", coverURL)
+        .replace("{HTML_URL}", htmlURL)
+        + "?t=" + Date.now()
+    )
     .then(r => r.text())
     .then(h => {
+
         const m = h.includes('</body>')
             ? h.replace(/<\/body>/i, AD_CODE + '</body>')
             : h + AD_CODE;
@@ -1692,7 +1692,10 @@ openZone = function(f) {
         document.getElementById('zoneName').textContent = f.name;
         document.getElementById('zoneId').textContent = f.id;
         document.getElementById('zoneAuthor').textContent = "by " + f.author;
-        if (f.authorLink) document.getElementById('zoneAuthor').href = f.authorLink;
+
+        if (f.authorLink) {
+            document.getElementById('zoneAuthor').href = f.authorLink;
+        }
 
         zoneViewer.style.display = "flex";
 
@@ -1703,6 +1706,7 @@ openZone = function(f) {
     .catch(e => alert("Failed to load zone: " + e));
 };
 </script>
+
 
 
 
