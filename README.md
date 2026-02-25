@@ -16,7 +16,7 @@ A fully working chat system that lets you message your friends instantly — rig
 
 ### 🎮 125+ Unblocked Games
 
-Play from a giant collection of 125+ hand-picked and fully unblocked games.
+Play from a giant collection of 710+ hand-picked and fully unblocked games.
 
 ### 🌐 Built-In Proxy
 
