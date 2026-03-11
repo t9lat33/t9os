@@ -1,89 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcobgfbfbme to Firebase Hosting</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+		/>
+		<title>Ultraviolet | Sophisticated Web Proxy</title>
+		<meta
+			name="description"
+			content="Ultraviolet is a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers. Unblock sites today!"
+		/>
+		<meta
+			name="keywords"
+			content="proxy, web proxy, ultraviolet, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, un block chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass iboss, bypass lightspeed filter, holy unblocker, chromebooks, titanium network, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked"
+		/>
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="#434c5e"
+		/>
+		<meta name="googlebot" content="index, follow, snippet" />
+		<link rel="shortcut icon" content="favicon.ico" />
+		<link rel="stylesheet" href="index.css" />
+		
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.9.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.9.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+		<script src="baremux/index.js"></script>
+		<script src="uv/uv.bundle.js"></script>
+		<script src="uv/uv.config.js"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "What is Ultraviolet (Web Proxy)?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!"
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "How do I unblock sites using Ultraviolet?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Simply head to an official site featuring Ultraviolet such as Holy Unblocker or Incognito! You can also self-host Ultraviolet on your own web server for maximum privacy."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What if Ultraviolet is blocked or not working?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Join the Titanium Network Discord at discord.gg/unblock!"
+						}
+					}
+				]
+			}
+		</script>
+	</head>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+	<body>
+		<div
+			title="Ultraviolet Logo"
+			class="flex-center logo-wrapper header-center"
+		>
+			<img class="logo" src="uv.png" alt="Ultraviolet" />
+			<h1>Ultraviolet | TN</h1>
+		</div>
+		<div class="flex-center desc left-margin">
+			<p>
+				Ultraviolet is highly sophisticated proxy used for evading internet
+				censorship.
+			</p>
+		</div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+		<form id="uv-form" class="flex-center">
+			<input
+				id="uv-search-engine"
+				value="https://www.google.com/search?q=%s"
+				type="hidden"
+			/>
+			<input id="uv-address" type="text" placeholder="Search the web freely" />
+		</form>
+		<div class="desc left-margin">
+			<p id="uv-error"></p>
+			<pre id="uv-error-code"></pre>
+		</div>
+		<footer>
+			<div>
+				<a
+					title="The TitaniumNetwork GitHub organization"
+					href="https://github.com/titaniumnetwork-dev"
+					>TitaniumNetwork</a
+				>
+				<a title="The TitaniumNetwork Discord" href="https://discord.gg/unblock"
+					>Discord</a
+				>
+				<a
+					title="The TompHTTP GitHub organization"
+					href="https://github.com/tomphttp"
+					>TompHTTP</a
+				>
+				<a
+					title="The official deployment repository for Ultraviolet"
+					href="https://github.com/titaniumnetwork-dev/Ultraviolet-App"
+					>GitHub</a
+				>
+				<a title="License information" href="credits.html">Credits</a>
+			</div>
+			<div>
+				<span>Ultraviolet &copy; TN 2023</span>
+			</div>
+		</footer>
+		<iframe style="display: none" id="uv-frame"></iframe>
+		<script src="register-sw.js"></script>
+		<script src="search.js"></script>
+		<script src="index.js"></script>
+	</body>
 </html>
