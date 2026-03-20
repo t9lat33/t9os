@@ -1,30 +1,19 @@
+const barePool = [
+    "http://163.245.208.151:8080/",
+    "http://163.245.208.151:8081/",
+    "http://163.245.208.151:8082/",
+    "http://163.245.208.151:8083/"
+];
 
-//uv config
-//has some neat features
-let storedBare = null;
-
-
-const defaultBareServer = '/edu/';
-let effectiveBare = defaultBareServer;
-
-if (typeof localStorage !== 'undefined') {
-  storedBare = localStorage.getItem('bare');
-  if (storedBare) {
-    effectiveBare = storedBare;
-  } else {
-    localStorage.setItem('bare', defaultBareServer);
-    effectiveBare = defaultBareServer;
-  }
-}
+const bare = barePool[Math.floor(Math.random() * barePool.length)];
 
 self.__uv$config = {
-  prefix: '/service/',
-  bare: effectiveBare,
-  encodeUrl: Ultraviolet.codec.xor.encode,
-  decodeUrl: Ultraviolet.codec.xor.decode,
-  handler: '/uv/uv.handler.js',
-  bundle: '/uv/uv.bundle.js',
-  config: '/uv/uv.config.js',
-  sw: '/uv/uv.sw.js',
+    prefix: "/s/ultraviolet/",
+    bare: bare,
+    encodeUrl: Ultraviolet.codec.xor.encode,
+    decodeUrl: Ultraviolet.codec.xor.decode,
+    handler: "/s/uv/uv.handler.js",
+    bundle: "/s/uv/uv.bundle.js",
+    config: "/s/uv/uv.config.js",
+    sw: "/s/uv/uv.sw.js",
 };
-
