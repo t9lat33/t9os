@@ -705,10 +705,10 @@
     let inSearch = false;
     let annotatedCache = [];
 
-    // Sources
+    // Sources — vidsrc.xyz moved to first position (default)
     const tvSources = [
-      'https://player.vidify.top/embed/tv/${id}/${season}/${episode}?autoplay=false&poster=true&chromecast=true&servericon=false&setting=true&pip=true&download=true&font=Roboto&fontcolor=0080ff&fontsize=20&opacity=0.5&primarycolor=0080ff&secondarycolor=0066cc&iconcolor=ffffff',
       'https://vidsrc.xyz/embed/tv?tmdb=${id}&season=${season}&episode=${episode}',
+      'https://player.vidify.top/embed/tv/${id}/${season}/${episode}?autoplay=false&poster=true&chromecast=true&servericon=false&setting=true&pip=true&download=true&font=Roboto&fontcolor=0080ff&fontsize=20&opacity=0.5&primarycolor=0080ff&secondarycolor=0066cc&iconcolor=ffffff',
       'https://player.vidsrc.co/embed/tv/${id}/${season}/${episode}?server=2',
       'https://player.autoembed.cc/embed/tv/${id}/${season}/${episode}',
       'https://vidsrc.icu/embed/tv/${id}/${season}/${episode}',
@@ -721,8 +721,8 @@
     ];
 
     const movieSources = [
-      'https://player.vidify.top/embed/movie/${id}?autoplay=false&poster=true&chromecast=true&servericon=false&setting=true&pip=true&download=true&font=Roboto&fontcolor=0080ff&fontsize=20&opacity=0.5&primarycolor=0080ff&secondarycolor=0066cc&iconcolor=ffffff',
       'https://vidsrc.xyz/embed/movie?tmdb=${id}',
+      'https://player.vidify.top/embed/movie/${id}?autoplay=false&poster=true&chromecast=true&servericon=false&setting=true&pip=true&download=true&font=Roboto&fontcolor=0080ff&fontsize=20&opacity=0.5&primarycolor=0080ff&secondarycolor=0066cc&iconcolor=ffffff',
       'https://player.vidsrc.co/embed/movie/${id}?server=2',
       'https://player.autoembed.cc/embed/movie/${id}?server=1',
       'https://vidsrc.icu/embed/movie/${id}',
